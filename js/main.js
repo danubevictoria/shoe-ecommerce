@@ -28,7 +28,7 @@ var alicesandal = new Shoe(
 	'Alice Sandal',
 	'$118.50',
 	'COLOR: otter suede',
-	4,
+	5,
 	2
 	);
 
@@ -110,18 +110,25 @@ for(var i = 0; i < shoes.length; i++) {
 	var descr_text = document.createTextNode(shoes[i].descr);
 	descr.appendChild(descr_text);
 
-	var rating = document.createElement('i');
+	var rating_p = document.createElement('span');
+
+	for (var j = 0; j < shoes[i].rating; j++) {
+		var rating = document.createElement('span');
+		rating.className = 'glyphicon glyphicon-star';
+		rating_p.appendChild(rating);
+	}
 
 	var reviews = document.createElement('span');
 	var reviews_text = document.createTextNode(shoes[i].reviews + ' reviews');
 	reviews.appendChild(reviews_text);
+	reviews.className = 'pull-right';
 
 	var button_div = document.createElement('div');
 
 	var buy = document.createElement('button');
 	var button_text = document.createTextNode('Buy Now');
 	buy.appendChild(button_text);
-	buy.className = 'btn btn-default'
+	buy.className = 'btn btn-default pull-right'
 
 	wrapper.appendChild(innerdiv);
 	innerdiv.appendChild(thumbnail);
@@ -129,7 +136,7 @@ for(var i = 0; i < shoes.length; i++) {
 	thumbnail.appendChild(caption);
 	caption.appendChild(label);
 	caption.appendChild(descr);
-	caption.appendChild(rating);
+	caption.appendChild(rating_p);
 	caption.appendChild(reviews);
 	button_div.appendChild(buy);
 	caption.appendChild(button_div);
