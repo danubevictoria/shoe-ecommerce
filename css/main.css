@@ -1,0 +1,17 @@
+
+.header {
+	margin-top: 40px;
+}
+
+.thumbnail-img {
+	width: 100%;
+}
+
+.thumbnail {
+	border: none;
+	margin: 40px 0 40px 0;
+}
+
+.btn {
+	float: right;
+}

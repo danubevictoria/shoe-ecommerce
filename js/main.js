@@ -29,7 +29,7 @@ var alicesandal = new Shoe(
 	'$118.50',
 	'COLOR: otter suede',
 	4,
-	0
+	2
 	);
 
 var talisabucklesandal = new Shoe(
@@ -38,12 +38,51 @@ var talisabucklesandal = new Shoe(
 	'$124.50',
 	'COLOR: english saddle',
 	4,
-	0
+	5
 	);
 
+var marielbucklesandal = new Shoe(
+	'images/marielbucklesandal.jpg',
+	'Mariel Buckle Sandal',
+	'$124.50',
+	'COLOR: black',
+	4,
+	5
+	);
+
+var violetcrisscrosssandal = new Shoe(
+	'images/violetcrisscrosssandal.jpg',
+	'Violet Crisscross Sandal',
+	'$124.50',
+	'COLOR: black',
+	4,
+	5
+	);
+
+var rosalindsandal = new Shoe(
+	'images/rosalindsandal.jpg',
+	'Rosalind Sandal',
+	'$124.50',
+	'COLOR: brown',
+	4,
+	5
+	);
+
+// Store shoes in array
 shoes.push(mulesandal);
 shoes.push(alicesandal);
 shoes.push(talisabucklesandal);
+shoes.push(marielbucklesandal);
+shoes.push(violetcrisscrosssandal);
+shoes.push(rosalindsandal);
+
+// Create header for store
+var page_header = document.createElement('div');
+var img = document.createElement('img');
+img.setAttribute('src', 'images/madewell.png');
+page_header.className = 'header text-center'
+page_header.appendChild(img);
+document.getElementById('body').appendChild(page_header);
 
 // Create each thumbnail component using bootstrap
 for(var i = 0; i < shoes.length; i++) {
@@ -58,11 +97,12 @@ for(var i = 0; i < shoes.length; i++) {
 
 	var img = document.createElement('img');
 	img.setAttribute('src', shoes[i].pic);
+	img.className = 'thumbnail-img'
 
 	var caption = document.createElement('div');
 	caption.className = 'caption';
 
-	var label = document.createElement('h3');
+	var label = document.createElement('h4');
 	var label_text = document.createTextNode(shoes[i].name);
 	label.appendChild(label_text);
 
